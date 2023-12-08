@@ -167,8 +167,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             initDecoder();
             decoder.start();
-            decoder.start();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
