@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">VideoPlayer</string>
+    <string name="choose_video">Choose A Video</string>
+    <string name="play_video">Play</string>
+
+</resources>
