@@ -150,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
         if (decoder == null) {
             try {
                 decoder = MediaCodec.createDecoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);
-                decoder.setCallback(callback);
                 format = MediaFormat.createVideoFormat(MediaFormat.MIMETYPE_VIDEO_AVC, displayWidth, displayHeight);
                 format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
                 format.setInteger(MediaFormat.KEY_BIT_RATE, displayWidth * displayHeight);
@@ -160,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        decoder.setCallback(callback);
         decoder.configure(format, surface, null, 0);
     }
 
@@ -167,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             initDecoder();
             decoder.start();
+            decoder.start();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
